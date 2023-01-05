@@ -1,0 +1,25 @@
+body{
+    background-image : url(/images/ile.jpg)
+}
+
+h1{
+    color : orange;
+}
+
+h3{
+    color : #000000
+}
+
+.table{
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+    color : blue;
+}
+
+.button{
+    background-color: aqua;
+    padding: 1em 1.5em;
+}

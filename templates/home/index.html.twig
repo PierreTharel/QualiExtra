@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+
+{% block body %}
+<h1> Bienvenue sur le blog du Guide Touristique du Voyageur Merveilleux ! </h1>
+
+<h3 class="my-4"> Pas encore inscrit ? Cliquez ici ! </h3>
+<a class="button" href="{{ path('app_register') }}"> S'inscrire</a>
+
+<h3 class="my-4"> Vous avez un compte ? Connectez vous ! </h3>
+<a class="button" href="{{ path('app_login') }}"> Connectez vous</a>
+{% endblock %}

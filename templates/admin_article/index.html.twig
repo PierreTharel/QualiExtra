@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article|Espace{% endblock %}
+
+{% block body %}
+    <h1>Liste des articles </h1>
+
+    <table class="table my-4">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Par</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Catégorie<th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.content }}</td>
+                <td>{{ article.category.name }}</td>
+                <td>
+                    <a href="{{ path('app_admin_article_show', {'id': article.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class = "button my-4" href="{{ path('app_admin_article_new') }}">Create new</a>
+{% endblock %}

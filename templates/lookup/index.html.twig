@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+
+{% block stylesheets %}
+     <link rel="stylesheet" href="{{ asset('css/home.css')}} ">
+{% endblock %}
+
+{% block body %}
+<h1 my="4"> Liste des articles comprenant votre mot </h1>
+
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>By</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for article in articles %}
+        <tr>
+            <td> {{ article.id }} </td>
+            <td> {{ article.user.nickname }} </td>
+            <td> {{ article.title }} </td>
+            <td> {{ article.content }} </td>
+            <td> 
+                <a href = "{{ path('app_article_show', {'id': article.id}) }}">Show</a>
+            </td>
+        </tr>
+        {% else %}
+            <tr>
+                <td colspan="4"> Aucun résultat trouvé </td>
+            </tr>
+        {% endfor %}
+        <tbody>
+</table>
+{% endblock %}
