@@ -25,18 +25,16 @@
         </tbody>
     </table>
 
-    <div>
+    <div class = "table">
         {% for comment in comments %}
             <div> {{ comment.user.nickname }} a dit : </div>
             <div> {{ comment.content }} <div>
         {% endfor %}
-    </div>
     
-    <div>
-       <a href="{{ path('app_comment_new', {'id': article.id}) }}"> Ajouter un commentaire </a>
-    <div> 
+       <a class ="my-4" href="{{ path('app_comment_new', {'id': article.id}) }}"> Ajouter un commentaire </a>
+    </div> 
 
-    <a href="{{ path('app_article_index') }}">back to list</a>
+    <a class ="" href="{{ path('app_article_index') }}">back to list</a>
 
 
 {% endblock %}
